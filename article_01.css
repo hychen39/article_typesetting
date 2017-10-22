@@ -1,0 +1,13 @@
+@import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);
+
+html body {
+    font-family: "cwTeXYen", serif;
+    font-size: 18px;
+}
+
+img[alt] {
+    max-height: 250px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
