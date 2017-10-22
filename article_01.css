@@ -3,6 +3,7 @@
 html body {
     font-family: "cwTeXYen", serif;
     font-size: 18px;
+    counter-reset: h1ctr;
 }
 
 img[alt] {
@@ -11,3 +12,23 @@ img[alt] {
     margin-left: auto;
     margin-right: auto;
 }
+
+h1, h2, h3 {
+    font-size: 14pt !important;
+}
+
+header {
+    font-size: 16pt;
+    text-align: center;
+}
+
+.author {
+    text-align: center;
+}
+
+/* Header Numbering */
+h1::before {
+    counter-increment: h1ctr;
+    content: counter(h1ctr) ". ";
+}
+
