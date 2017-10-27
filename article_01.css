@@ -1,8 +1,7 @@
 @import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);
-
 html body {
     font-family: "cwTeXYen", serif;
-    font-size: 18px;
+    font-size: 14pt;
     counter-reset: h1ctr;
 }
 
@@ -13,22 +12,55 @@ img[alt] {
     margin-right: auto;
 }
 
-h1, h2, h3 {
-    font-size: 14pt !important;
+h1,
+h2,
+h3, h4 {
+    font-size: 16pt !important;
 }
 
-header {
-    font-size: 16pt;
+html header {
+    font-size: 18pt;
     text-align: center;
 }
 
 .author {
     text-align: center;
+    font-size: 12pt;
 }
 
+
 /* Header Numbering */
-h1::before {
+
+h1 {
     counter-increment: h1ctr;
+    counter-reset: h2ctr;
+}
+
+h1::before {
     content: counter(h1ctr) ". ";
 }
 
+h2 {
+    counter-increment: h2ctr;
+    counter-reset: h3ctr;
+}
+
+h2::before {
+    content: counter(h1ctr) "." counter(h2ctr) " ";
+}
+
+h3 {
+    counter-increment: h3ctr;
+    counter-reset: h4ctr;
+}
+
+h3::before {
+    content: counter(h1ctr) "." counter(h2ctr) "." counter(h3ctr) " ";
+}
+
+h4 {
+    counter-increment: h4ctr;
+}
+h4::before {
+    content: "(" counter(h4ctr, lower-alpha) ") ";
+}
