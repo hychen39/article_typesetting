@@ -1,4 +1,21 @@
 @import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);
+
+@page {
+    size: A4;
+    margin: 5mm;
+  }
+
+@media print {
+  html body {
+    width: 210mm;
+    height: 297mm;
+  }
+
+  html body pre {
+    border: 1px solid rgb(97, 96, 96);
+  }    
+}
+
 html body {
     font-family: "cwTeXYen", serif;
     font-size: 14pt;
@@ -64,3 +81,9 @@ h4 {
 h4::before {
     content: "(" counter(h4ctr, lower-alpha) ") ";
 }
+
+html body pre {
+    border: 1px solid #ddd;
+}
+
+
