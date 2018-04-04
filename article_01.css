@@ -23,10 +23,19 @@ html body {
 }
 
 img[alt] {
-    max-height: 250px;
+    max-height: 400px;
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+pre[class*="language-"] {
+    border: 1px solid rgb(187, 182, 182);
+    white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;
 }
 
 h1,
@@ -49,29 +58,29 @@ html header {
 /* Header Numbering */
 
 h1 {
-    counter-increment: h1ctr;
-    counter-reset: h2ctr;
+    counter-reset: h2ctr; 
 }
 
-h1::before {
+h1:before {
+    counter-increment: h1ctr;
     content: counter(h1ctr) ". ";
 }
 
 h2 {
-    counter-increment: h2ctr;
     counter-reset: h3ctr;
 }
 
 h2::before {
+    counter-increment: h2ctr;
     content: counter(h1ctr) "." counter(h2ctr) " ";
 }
 
 h3 {
-    counter-increment: h3ctr;
     counter-reset: h4ctr;
 }
 
 h3::before {
+    counter-increment: h3ctr;
     content: counter(h1ctr) "." counter(h2ctr) "." counter(h3ctr) " ";
 }
 
