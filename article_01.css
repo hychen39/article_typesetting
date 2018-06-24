@@ -2,7 +2,7 @@
 
 @page {
     size: A4;
-    margin: 5mm;
+    margin: 15mm;
   }
 
 @media print {
@@ -59,6 +59,7 @@ html header {
 
 h1 {
     counter-reset: h2ctr; 
+    counter-reset: step_ctr;
 }
 
 h1:before {
@@ -68,10 +69,11 @@ h1:before {
 
 h2 {
     counter-reset: h3ctr;
+    counter-increment: h2ctr;
+    
 }
 
 h2::before {
-    counter-increment: h2ctr;
     content: counter(h1ctr) "." counter(h2ctr) " ";
 }
 
@@ -95,4 +97,11 @@ html body pre {
     border: 1px solid #ddd;
 }
 
+.step::after {
+    content: " " counter(step_ctr) ". "
+ }
 
+ .step {
+     counter-increment: step_ctr;
+     font-weight: bold;
+ }
