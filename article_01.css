@@ -58,8 +58,8 @@ html header {
 /* Header Numbering */
 
 h1 {
-    counter-reset: h2ctr; 
-    counter-reset: step_ctr;
+    counter-reset: h2ctr 0 step_ctr 0;
+    /* counter-reset: h2ctr;  */
 }
 
 h1:before {
@@ -105,3 +105,4 @@ html body pre {
      counter-increment: step_ctr;
      font-weight: bold;
  }
+
