@@ -5,8 +5,20 @@ html body {
     counter-reset: h1ctr;
 }
 
+@media print {
+    pre[class*="language-"] {
+        overflow: visible;
+      }    
+}
+
+html body pre {
+    border: 1px solid rgb(97, 96, 96);
+}  
+
+  
+
 img[alt] {
-    max-height: 250px;
+    max-width: 70%;
     display: block;
     margin-left: auto;
     margin-right: auto;
