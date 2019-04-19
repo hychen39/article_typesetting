@@ -1,4 +1,21 @@
 @import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);
+
+@page {
+    size: A4;
+    margin: 15mm;
+  }
+
+@media print {
+  html body {
+    width: 210mm;
+    height: 297mm;
+  }
+
+  html body pre {
+    border: 1px solid rgb(97, 96, 96);
+  }    
+}
+
 html body {
     font-family: "cwTeXYen", serif;
     font-size: 14pt;
@@ -24,6 +41,15 @@ img[alt] {
     margin-right: auto;
 }
 
+pre[class*="language-"] {
+    border: 1px solid rgb(187, 182, 182);
+    white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;
+}
+
 h1,
 h2,
 h3, h4 {
@@ -44,17 +70,19 @@ html header {
 /* Header Numbering */
 
 h1 {
-    counter-increment: h1ctr;
-    counter-reset: h2ctr;
+    counter-reset: h2ctr 0 step_ctr 0;
+    /* counter-reset: h2ctr;  */
 }
 
-h1::before {
+h1:before {
+    counter-increment: h1ctr;
     content: counter(h1ctr) ". ";
 }
 
 h2 {
-    counter-increment: h2ctr;
     counter-reset: h3ctr;
+    counter-increment: h2ctr;
+    
 }
 
 h2::before {
@@ -62,11 +90,11 @@ h2::before {
 }
 
 h3 {
-    counter-increment: h3ctr;
     counter-reset: h4ctr;
 }
 
 h3::before {
+    counter-increment: h3ctr;
     content: counter(h1ctr) "." counter(h2ctr) "." counter(h3ctr) " ";
 }
 
@@ -76,3 +104,17 @@ h4 {
 h4::before {
     content: "(" counter(h4ctr, lower-alpha) ") ";
 }
+
+html body pre {
+    border: 1px solid #ddd;
+}
+
+.step::after {
+    content: " " counter(step_ctr) ". "
+ }
+
+ .step {
+     counter-increment: step_ctr;
+     font-weight: bold;
+ }
+
